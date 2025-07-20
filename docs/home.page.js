@@ -1,4 +1,4 @@
-import app, { el, div, h1, h2, h3, p } from "/framework/app.js";
+import app, { el, div, h1, h2, h3, p } from "./framework/app.js";
 
 div("hello world");
 
