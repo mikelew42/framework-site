@@ -1,4 +1,4 @@
-import app, { el, div, h1, h2, h3, p } from "/app.js";
+import app, { el, div, h1, h2, h3, p } from "./app.js";
 
 app.$root.ac("page");
 

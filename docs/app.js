@@ -1,8 +1,8 @@
-import { View, Base, Events, App, el, div, h1, h2, h3, p, is, icon, Test, test } from "/framework/core/App/App.js";
-import Socket from "/framework/ext/Socket/Socket.js";
-import Directory from "/framework/ext/Directory/Directory.js";
+import { View, Base, Events, App, el, div, h1, h2, h3, p, is, icon, Test, test } from "./framework/core/App/App.js";
+import Socket from "./framework/ext/Socket/Socket.js";
+import Directory from "./framework/ext/Directory/Directory.js";
 
-import "/framework/ext/Lorem/Lorem.js";
+import "./framework/ext/Lorem/Lorem.js";
 
 const app = window.app = new App({
 
