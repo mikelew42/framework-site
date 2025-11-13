@@ -159,4 +159,4 @@ const lorem = app.lorem;
 export default app;
 
 export { app, View, Base, Events, App, el, div, h1, h2, h3, p, is, icon, Test, test, lorem };
-export * from "/framework/core/App/App.js";
+export * from "./framework/core/App/App.js";
