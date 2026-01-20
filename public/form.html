@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Form Architecture (Standard CSS)</title>
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- CSS Variables & Reset --- */
+        :root {
+            --primary-color: #4f46e5; /* Indigo 600 */
+            --primary-hover: #4338ca; /* Indigo 700 */
+            --primary-light: #eef2ff; /* Indigo 50 */
+            
+            --text-main: #0f172a;     /* Slate 900 */
+            --text-secondary: #475569; /* Slate 600 */
+            --text-muted: #94a3b8;    /* Slate 400 */
+            
+            --bg-body: #f8fafc;       /* Slate 50 */
+            --bg-surface: #ffffff;
+            
+            --border-color: #cbd5e1;  /* Slate 300 */
+            --border-focus: #4f46e5;
+            
+            --error-color: #dc2626;   /* Red 600 */
+            --success-color: #16a34a; /* Green 600 */
+            --warning-color: #d97706; /* Amber 600 */
+
+            --radius-md: 0.5rem;
+            --radius-lg: 1rem;
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1rem;
+        }
+
+        /* --- Layout & Typography --- */
+        .form-card {
+            background: var(--bg-surface);
+            width: 100%;
+            max-width: 48rem; /* approx 768px */
+            padding: 2.5rem;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+            border: 1px solid #e2e8f0;
+        }
+
+        .form-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .form-header h2 {
+            font-size: 1.875rem;
+            font-weight: 700;
+            letter-spacing: -0.025em;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-header p {
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+        }
+
+        /* --- Form Structure --- */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        fieldset {
+            border: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        legend {
+            font-size: 1.125rem;
+            font-weight: 500;
+            width: 100%;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #e2e8f0;
+            margin-bottom: 1rem;
+        }
+
+        .row-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+
+        @media (min-width: 640px) {
+            .row-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        /* --- Inputs & Labels --- */
+        .form-group {
+            position: relative;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            margin-bottom: 0.375rem;
+        }
+
+        .form-input, .form-textarea {
+            display: block;
+            width: 100%;
+            padding: 0.75rem 0.875rem;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            font-size: 0.875rem;
+            color: var(--text-main);
+            background-color: var(--bg-surface);
+            transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+            font-family: inherit;
+        }
+
+        .form-input:focus, .form-textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+        }
+
+        .form-input::placeholder {
+            color: var(--text-muted);
+        }
+
+        /* --- Floating Labels --- */
+        .floating-group {
+            position: relative;
+        }
+
+        /* Override generic input styles for floating inputs if needed */
+        .floating-input {
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+
+        .floating-input::placeholder {
+            color: transparent; /* Hide placeholder so label can sit there */
+        }
+
+        .floating-label-text {
+            position: absolute;
+            left: 0.75rem;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: var(--bg-surface);
+            padding: 0 0.25rem;
+            color: var(--text-secondary);
+            font-size: 1rem;
+            transition: all 0.2s ease;
+            pointer-events: none;
+            line-height: 1;
+        }
+
+        /* When input has focus or value, move label up */
+        .floating-input:focus + .floating-label-text,
+        .floating-input:not(:placeholder-shown) + .floating-label-text {
+            top: 0;
+            transform: translateY(-50%) scale(0.85);
+            color: var(--primary-color);
+        }
+
+        /* --- Custom Radio Cards --- */
+        .radio-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+        @media (min-width: 640px) {
+            .radio-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .radio-card {
+            position: relative;
+        }
+
+        .radio-card-label {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem;
+            background: var(--bg-surface);
+            border: 2px solid #e2e8f0;
+            border-radius: var(--radius-lg);
+            cursor: pointer;
+            transition: all 0.2s;
+            height: 100%;
+        }
+
+        .radio-card-label:hover {
+            background-color: var(--bg-body);
+        }
+
+        /* Checked State using :checked sibling selector */
+        input[type="radio"]:checked + .radio-card-label {
+            border-color: var(--primary-color);
+            background-color: var(--primary-light);
+        }
+
+        .radio-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-secondary);
+        }
+        
+        input[type="radio"]:checked + .radio-card-label .radio-icon {
+            color: var(--primary-color);
+        }
+
+        .radio-title {
+            font-weight: 600;
+            color: var(--text-main);
+        }
+        .radio-sub {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+        }
+
+        .check-badge {
+            position: absolute;
+            top: 0.5rem;
+            right: 0.5rem;
+            color: var(--primary-color);
+            opacity: 0;
+            transition: opacity 0.2s;
+            font-size: 1.25rem;
+        }
+
+        input[type="radio"]:checked ~ .check-badge {
+            opacity: 1;
+        }
+
+        /* --- Toggle Switch --- */
+        .toggle-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: var(--bg-body);
+            padding: 1rem;
+            border-radius: var(--radius-md);
+        }
+
+        .toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 44px;
+            height: 24px;
+        }
+
+        .toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-color: #cbd5e1;
+            transition: .4s;
+            border-radius: 34px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 20px;
+            width: 20px;
+            left: 2px;
+            bottom: 2px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+        input:checked + .slider {
+            background-color: var(--primary-color);
+        }
+        
+        input:focus + .slider {
+            box-shadow: 0 0 1px var(--primary-color);
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(20px);
+        }
+
+        /* --- Buttons --- */
+        .btn-group {
+            display: flex;
+            justify-content: flex-end;
+            gap: 1rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .btn {
+            padding: 0.625rem 1.5rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            border: none;
+            transition: background-color 0.2s;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-secondary);
+        }
+        .btn-secondary:hover {
+            color: var(--text-main);
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+        }
+        .btn-primary:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+        }
+
+        /* --- Utilities & Helper Classes --- */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            border: 0;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        .text-right { text-align: right; }
+        .text-sm { font-size: 0.75rem; color: var(--text-secondary); }
+        .optional { color: var(--text-muted); font-weight: 400; }
+        .animate-spin { animation: spin 1s linear infinite; margin-left: 0.5rem; }
+
+        @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+        /* --- Validation States & Messages --- */
+        .error-message {
+            color: var(--error-color);
+            font-size: 0.875rem;
+            margin-top: 0.25rem;
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        .error-message.visible {
+            max-height: 24px;
+            opacity: 1;
+        }
+
+        /* Input Error State */
+        .form-input.has-error, .floating-input.has-error {
+            border-color: var(--error-color);
+            /* Remove standard focus ring and replace with error ring */
+        }
+        .form-input.has-error:focus, .floating-input.has-error:focus {
+            box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+        }
+
+        /* Error Icon placement */
+        .input-wrapper { position: relative; }
+        .error-icon {
+            position: absolute;
+            right: 0.75rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--error-color);
+            font-size: 1.25rem;
+            pointer-events: none;
+        }
+
+        /* Password Toggle */
+        .password-toggle {
+            position: absolute;
+            right: 0.75rem;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            cursor: pointer;
+            font-size: 1.25rem;
+            padding: 0;
+        }
+        .password-toggle:hover { color: var(--text-secondary); }
+
+        /* JS Dynamic Classes */
+        .limit-reached {
+            color: var(--warning-color);
+            font-weight: 700;
+        }
+
+        /* --- Toast Notification --- */
+        #toast {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background-color: var(--success-color);
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-lg);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            z-index: 100;
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+        }
+        #toast.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        #toast i { font-size: 1.5rem; }
+    </style>
+</head>
+<body>
+
+    <div class="form-card">
+        
+        <!-- Header -->
+        <div class="form-header">
+            <h2>Create Account</h2>
+            <p>Demonstrating responsive layouts with standard CSS.</p>
+        </div>
+
+        <!-- Form Start -->
+        <form id="mainForm" novalidate>
+            
+            <!-- GROUP 1: Standard Grid Layout -->
+            <fieldset>
+                <legend>Personal Details</legend>
+                
+                <div class="row-grid">
+                    <!-- Field: First Name -->
+                    <div class="form-group">
+                        <label for="firstName" class="form-label">First Name</label>
+                        <div class="input-wrapper">
+                            <input type="text" id="firstName" name="firstName" class="form-input" required placeholder="Jane">
+                            <div class="error-icon hidden"><i class="ph ph-warning-circle"></i></div>
+                        </div>
+                        <p class="error-message" id="firstName-error">First name is required.</p>
+                    </div>
+
+                    <!-- Field: Last Name -->
+                    <div class="form-group">
+                        <label for="lastName" class="form-label">Last Name</label>
+                        <div class="input-wrapper">
+                            <input type="text" id="lastName" name="lastName" class="form-input" required placeholder="Doe">
+                            <div class="error-icon hidden"><i class="ph ph-warning-circle"></i></div>
+                        </div>
+                        <p class="error-message" id="lastName-error">Last name is required.</p>
+                    </div>
+                </div>
+            </fieldset>
+
+            <!-- GROUP 2: Floating Labels -->
+            <fieldset>
+                <legend>Account Security</legend>
+                
+                <!-- Email -->
+                <div class="floating-group">
+                    <input type="email" id="email" name="email" class="form-input floating-input" required pattern="[^@\s]+@[^@\s]+\.[^@\s]+" placeholder="you@example.com">
+                    <label for="email" class="floating-label-text">Email Address</label>
+                    <p class="error-message" id="email-error">Please enter a valid email address.</p>
+                </div>
+
+                <!-- Password -->
+                <div class="floating-group">
+                    <!-- Extra wrapper for toggle icon positioning -->
+                    <div class="input-wrapper">
+                        <input type="password" id="password" name="password" class="form-input floating-input" required minlength="8" placeholder="Password" style="padding-right: 2.5rem;">
+                        <label for="password" class="floating-label-text">Password</label>
+                        <button type="button" onclick="togglePassword()" class="password-toggle">
+                            <i id="eyeIcon" class="ph ph-eye"></i>
+                        </button>
+                    </div>
+                    <p class="error-message" id="password-error">Password must be at least 8 characters.</p>
+                </div>
+            </fieldset>
+
+            <!-- GROUP 3: Custom Radio Cards -->
+            <fieldset>
+                <legend>Account Type</legend>
+                <div class="radio-grid">
+                    
+                    <!-- Option 1 -->
+                    <div class="radio-card">
+                        <input class="sr-only" type="radio" name="plan" id="plan_starter" value="starter" checked>
+                        <label class="radio-card-label" for="plan_starter">
+                            <i class="ph ph-plant radio-icon"></i>
+                            <span class="radio-title">Starter</span>
+                            <span class="radio-sub">Free</span>
+                        </label>
+                        <div class="check-badge"><i class="ph ph-check-circle-fill"></i></div>
+                    </div>
+
+                    <!-- Option 2 -->
+                    <div class="radio-card">
+                        <input class="sr-only" type="radio" name="plan" id="plan_pro" value="pro">
+                        <label class="radio-card-label" for="plan_pro">
+                            <i class="ph ph-rocket-launch radio-icon"></i>
+                            <span class="radio-title">Pro</span>
+                            <span class="radio-sub">$12/mo</span>
+                        </label>
+                        <div class="check-badge"><i class="ph ph-check-circle-fill"></i></div>
+                    </div>
+
+                    <!-- Option 3 -->
+                    <div class="radio-card">
+                        <input class="sr-only" type="radio" name="plan" id="plan_biz" value="business">
+                        <label class="radio-card-label" for="plan_biz">
+                            <i class="ph ph-buildings radio-icon"></i>
+                            <span class="radio-title">Business</span>
+                            <span class="radio-sub">$49/mo</span>
+                        </label>
+                        <div class="check-badge"><i class="ph ph-check-circle-fill"></i></div>
+                    </div>
+                </div>
+            </fieldset>
+
+            <!-- GROUP 4: Textarea -->
+            <div class="form-group">
+                <label for="bio" class="form-label">Bio <span class="optional">(Optional)</span></label>
+                <textarea id="bio" name="bio" rows="4" maxlength="200" class="form-textarea" placeholder="Tell us a little about yourself..." oninput="updateCount(this)"></textarea>
+                <div class="text-right">
+                    <span id="charCount" class="text-sm">0/200</span>
+                </div>
+            </div>
+
+            <!-- GROUP 5: Toggle Switch -->
+            <div class="toggle-wrapper">
+                <div>
+                    <div style="font-weight: 500; font-size: 0.875rem;">Marketing Emails</div>
+                    <div style="font-size: 0.75rem; color: var(--text-secondary);">Receive updates about new products.</div>
+                </div>
+                <label class="toggle-switch">
+                    <input type="checkbox">
+                    <span class="slider"></span>
+                </label>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="btn-group">
+                <button type="button" class="btn btn-secondary">Cancel</button>
+                <button type="submit" id="submitBtn" class="btn btn-primary">
+                    <span id="btnText">Create Account</span>
+                    <i id="btnSpinner" class="ph ph-spinner animate-spin hidden"></i>
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Success Toast -->
+    <div id="toast">
+        <i class="ph ph-check-circle"></i>
+        <div>
+            <div style="font-weight: 600; font-size: 0.875rem;">Success!</div>
+            <div style="font-size: 0.75rem;">Your account has been created.</div>
+        </div>
+    </div>
+
+    <script>
+        // 1. Character Count Logic
+        function updateCount(textarea) {
+            const count = textarea.value.length;
+            const max = textarea.getAttribute('maxlength');
+            const counterEl = document.getElementById('charCount');
+            counterEl.textContent = `${count}/${max}`;
+            
+            if (count >= max) {
+                counterEl.classList.add('limit-reached');
+            } else {
+                counterEl.classList.remove('limit-reached');
+            }
+        }
+
+        // 2. Password Toggle Logic
+        function togglePassword() {
+            const passwordInput = document.getElementById('password');
+            const eyeIcon = document.getElementById('eyeIcon');
+            
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                eyeIcon.classList.replace('ph-eye', 'ph-eye-slash');
+            } else {
+                passwordInput.type = 'password';
+                eyeIcon.classList.replace('ph-eye-slash', 'ph-eye');
+            }
+        }
+
+        // 3. Form Validation Logic
+        const form = document.getElementById('mainForm');
+        const inputs = form.querySelectorAll('input, textarea, select');
+
+        function showError(input, message) {
+            const errorId = input.id + '-error';
+            const errorEl = document.getElementById(errorId);
+            const container = input.parentElement; // Closest wrapper
+            
+            input.classList.add('has-error');
+
+            if (errorEl) {
+                errorEl.textContent = message || input.validationMessage;
+                errorEl.classList.add('visible');
+            }
+
+            const icon = container.querySelector('.error-icon');
+            if (icon) icon.classList.remove('hidden');
+        }
+
+        function clearError(input) {
+            const errorId = input.id + '-error';
+            const errorEl = document.getElementById(errorId);
+            const container = input.parentElement;
+
+            input.classList.remove('has-error');
+
+            if (errorEl) {
+                errorEl.classList.remove('visible');
+            }
+
+            const icon = container.querySelector('.error-icon');
+            if (icon) icon.classList.add('hidden');
+        }
+
+        inputs.forEach(input => {
+            input.addEventListener('input', () => {
+                if (input.classList.contains('has-error')) {
+                    clearError(input);
+                }
+            });
+            input.addEventListener('blur', () => {
+                if (!input.checkValidity() && input.value !== "") {
+                   showError(input);
+                }
+            });
+        });
+
+        // 4. Form Submission
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            let isValid = true;
+
+            inputs.forEach(input => {
+                if (!input.checkValidity()) {
+                    showError(input);
+                    isValid = false;
+                }
+            });
+
+            if (isValid) {
+                const btn = document.getElementById('submitBtn');
+                const btnText = document.getElementById('btnText');
+                const spinner = document.getElementById('btnSpinner');
+                
+                btn.disabled = true;
+                btnText.textContent = 'Creating...';
+                spinner.classList.remove('hidden');
+
+                setTimeout(() => {
+                    btn.disabled = false;
+                    btnText.textContent = 'Create Account';
+                    spinner.classList.add('hidden');
+                    
+                    const toast = document.getElementById('toast');
+                    toast.classList.add('show');
+                    
+                    form.reset();
+                    document.getElementById('charCount').textContent = '0/200';
+
+                    setTimeout(() => {
+                        toast.classList.remove('show');
+                    }, 3000);
+
+                }, 1500);
+            }
+        });
+    </script>
+</body>
+</html>

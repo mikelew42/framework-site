@@ -1,0 +1,217 @@
+/* Theme 2: Classic & Professional */
+
+.theme-2 {
+    /* Typography Variables */
+    --base-size: clamp(17px, 1.3vw, 21px);
+    --type-scale: 1.333;
+    --size: clamp(0.875rem, 1.75vw, 1.5rem);
+    
+    /* Fonts */
+    --font-body: 'Merriweather', Georgia, serif;
+    --font-heading: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+    
+    /* Color Palette - Cool & Professional */
+    --primary: #4A90E2;
+    --primary-dark: #357ABD;
+    --primary-light: #6BA3E8;
+    
+    --bg-base: #1E3A5F;
+    --bg-light: #2E4A6F;
+    --bg-lighter: #3E5A7F;
+    --bg-dark: #0E2A4F;
+    
+    --text-primary: #FFFFFF;
+    --text-secondary: #C5D0E0;
+    --text-muted: #95A0B0;
+    
+    --surface: #FAFBFC;
+    --surface-alt: #EEF2F7;
+    --border: #D0D7E0;
+    
+    /* Spacing */
+    --gap-sm: calc(var(--size) * 0.5);
+    --gap-md: var(--size);
+    --gap-lg: calc(var(--size) * 2);
+    --gap-xl: calc(var(--size) * 3);
+}
+
+/* Base Styles */
+.theme-2 {
+    font-family: var(--font-body);
+    font-size: var(--base-size);
+    background: var(--surface-alt);
+    color: var(--bg-base);
+    font-weight: 400;
+}
+
+/* Typography */
+.theme-2 h1 {
+    font-family: var(--font-heading);
+    font-size: clamp(2.25rem, 5vw + 1rem, 4rem);
+    font-weight: 700;
+    line-height: 1.15;
+    margin: 0.5em 0;
+    color: var(--bg-base);
+    letter-spacing: -0.02em;
+}
+
+.theme-2 h2 {
+    font-family: var(--font-heading);
+    font-size: calc(var(--base-size) * var(--type-scale) * var(--type-scale));
+    font-weight: 600;
+    line-height: 1.25;
+    margin: 1.2em 0 0.6em;
+}
+
+.theme-2 h3 {
+    font-family: var(--font-heading);
+    font-size: calc(var(--base-size) * var(--type-scale));
+    font-weight: 600;
+    line-height: 1.35;
+    margin: 1.2em 0 0.6em;
+}
+
+.theme-2 h4 {
+    font-family: var(--font-heading);
+    font-size: var(--base-size);
+    font-weight: 700;
+    line-height: 1.5;
+    margin: 1em 0 0.5em;
+    letter-spacing: 0.03em;
+}
+
+.theme-2 p {
+    line-height: 1.8;
+    margin: 1.2em 0;
+}
+
+/* Links */
+.theme-2 a {
+    color: var(--primary);
+    text-decoration: underline;
+    text-decoration-color: rgba(74, 144, 226, 0.3);
+    text-underline-offset: 0.2em;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.theme-2 a:hover {
+    color: var(--primary-dark);
+    text-decoration-color: var(--primary-dark);
+}
+
+/* Buttons */
+.theme-2 button,
+.theme-2 .button {
+    font-family: var(--font-heading);
+    font-size: var(--base-size);
+    padding: calc(var(--size) * 0.6) calc(var(--size) * 1.5);
+    border: 2px solid transparent;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.25s ease;
+    margin-right: 0.5em;
+    margin-bottom: 0.5em;
+    letter-spacing: 0.02em;
+}
+
+.theme-2 button.primary,
+.theme-2 .button.primary {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+}
+
+.theme-2 button.primary:hover,
+.theme-2 .button.primary:hover {
+    background: var(--primary-dark);
+    border-color: var(--primary-dark);
+    box-shadow: 0 6px 20px rgba(74, 144, 226, 0.25);
+}
+
+.theme-2 button.secondary,
+.theme-2 .button.secondary {
+    background: var(--surface);
+    color: var(--primary);
+    border-color: var(--border);
+}
+
+.theme-2 button.secondary:hover,
+.theme-2 .button.secondary:hover {
+    background: var(--surface-alt);
+    border-color: var(--primary);
+}
+
+/* Forms */
+.theme-2 input[type="text"],
+.theme-2 input[type="email"],
+.theme-2 input[type="password"],
+.theme-2 textarea,
+.theme-2 select {
+    font-family: var(--font-body);
+    font-size: var(--base-size);
+    padding: calc(var(--size) * 0.7);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    background: var(--surface);
+    color: var(--bg-base);
+    transition: all 0.2s ease;
+    width: 100%;
+    margin-bottom: var(--gap-md);
+}
+
+.theme-2 input:focus,
+.theme-2 textarea:focus,
+.theme-2 select:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 4px rgba(74, 144, 226, 0.08);
+}
+
+.theme-2 label {
+    display: block;
+    font-family: var(--font-heading);
+    font-weight: 600;
+    margin-bottom: calc(var(--size) * 0.4);
+    color: var(--bg-base);
+    font-size: 0.95em;
+}
+
+/* Cards */
+.theme-2 .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: calc(var(--size) * 2);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+    margin-bottom: var(--gap-md);
+    transition: all 0.25s ease;
+}
+
+.theme-2 .card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-color: var(--primary-light);
+}
+
+/* Code */
+.theme-2 pre,
+.theme-2 code {
+    font-family: 'Source Code Pro', 'Consolas', 'Monaco', monospace;
+    background: var(--bg-base);
+    color: var(--text-primary);
+}
+
+.theme-2 pre {
+    padding: calc(var(--size) * 1.5);
+    border-radius: 6px;
+    overflow-x: auto;
+    margin: var(--gap-lg) 0;
+    border-left: 4px solid var(--primary);
+}
+
+.theme-2 code {
+    padding: 0.25em 0.5em;
+    border-radius: 3px;
+    font-size: 0.88em;
+}

@@ -1,0 +1,206 @@
+/* Optional/Questionable Utilities */
+
+/* Layout Helpers */
+.squeeze { max-width: 60em; }
+.center { margin-left: auto; margin-right: auto; }
+.shadow { box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.05); }
+.min-w-400 { min-width: 400px; }
+
+/* UX Debugging */
+.ux, .ux * {
+    background: rgba(0, 0, 0, 0.05);
+    outline: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.ux:hover, .ux *:hover {
+    background: rgba(0, 0, 0, 0.1);
+    outline: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+
+/* .layout { display: flex; flex-wrap: wrap; }
+.layout > * { flex: 1 1 300px; } */
+
+.mb-1 { margin-bottom: 1em; }
+
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
+}
+
+.material-icons { font-size: 1.5em; }
+
+.pad { padding: 1em; }
+
+.squeeze, .root.page { max-width: 60em; }
+.center.squeeze, .root.page { margin-left: auto; margin-right: auto; }
+
+.bg-light, .root.light { background: #eee; }
+.root.page, .white { background: white; }
+
+.root.pad, .root.page { padding: 4% 3%; transition: padding 0.3s; }
+
+@media (min-width: 900px) {
+    .root.pad, .root.page { padding: 3em 4em; }
+}
+
+
+/* Lew42.css */
+
+:root {
+    --prim: #FF6157;
+    --bg: #42404B;
+    --main-header-height: 2.6em;
+}
+
+:root {
+    --base-lightness: 25%;
+    --bg-hue: 250deg;
+    --bg-sat: 10%;
+    --bg-light: 25%;
+    --bg: hsl(var(--bg-hue) var(--bg-sat) var(--bg-light));
+
+    --bg-plus-10: hsl(var(--bg-hue) var(--bg-sat) calc(var(--bg-light) + 10%));
+    --bg-plus-20: hsl(var(--bg-hue) var(--bg-sat) calc(var(--bg-light) + 20%));
+    --bg-minus-10: hsl(var(--bg-hue) var(--bg-sat) calc(var(--bg-light) - 10%));
+    --bg-minus-20: hsl(var(--bg-hue) var(--bg-sat) calc(var(--bg-light) - 15%));
+}
+
+.bg { background: var(--bg); }
+.bg-plus-10 { background: var(--bg-plus-10); }
+.bg-plus-20 { background: var(--bg-plus-20); }
+.bg-minus-10 { background: var(--bg-minus-10); }
+.bg-minus-20 { background: var(--bg-minus-20); }
+
+html { scrollbar-color: rgba(0, 0, 0, 0.2) transparent; }
+
+body {
+    color: var(--bg);
+    background: #ddd;
+    font-family: Montserrat;
+    height: 100%;
+    font-weight: 500;
+}
+
+/* 
+@media (min-width: 1333px) {
+    html { font-size: 1.2vw; }
+}
+
+@media (min-width: 1666px) {
+    html { font-size: 20px; }
+} */
+
+body { font-size: clamp(16px, 1.2vw, 20px); }
+
+.app {
+    display: flex;
+    flex: 1 1 100%;
+    flex-direction: column;
+    height: 100%;
+}
+
+.background {
+    flex: 1 1 0%;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.root {
+    flex: 1 1 0%;
+    container-type: inline-size;
+    width: 100%;
+    font-size: clamp(16px, 1.2vw, 24px);
+}
+
+.app>.main {
+    display: flex;
+    flex: 1 1 100%;
+    overflow: hidden;
+}
+
+.app>.header {
+    background: white;
+    display: flex;
+    align-items: stretch;
+    position: relative;
+    z-index: 10;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+}
+
+.shadow { box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.05); }
+
+.app>.main>.left {
+    overflow: hidden auto;
+    scrollbar-width: thin;
+    background: white;
+    z-index: 5;
+}
+
+h2 { font-size: 2em; }
+h2, h3 { margin: 1em 0; }
+
+p.intro {
+    font-size: 1.75em;
+    margin: 1em 0;
+    line-height: 1.5;
+}
+
+ul { padding-left: 1.4em; }
+li { margin-bottom: 0.5em; }
+
+a {
+    color: var(--bg);
+    font-weight: 700;
+    text-underline-offset: 0.3em;
+    text-decoration-thickness: 0.1em;
+    text-decoration-color: var(--prim);
+}
+
+a:visited {
+    color: var(--bg-plus-20);
+    text-decoration-color: var(--bg-plus-20);
+}
+
+pre, code { background: var(--bg); color: #eee; }
+
+pre {
+    padding: 1.5em 2em 2em;
+    border-radius: 4px;
+    box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.4);
+    margin: 3% 0;
+    white-space: pre-wrap;
+}
+
+code {
+    padding: 0.3em 0.5em;
+    border-radius: 0.2em;
+    margin: 0 0.2em;
+    vertical-align: 1px;
+    box-decoration-break: clone;
+    white-space: nowrap;
+}
+
+code.light { background: #eee; color: var(--bg); }
+
+.ux, .ux * {
+    background: rgba(0, 0, 0, 0.05);
+    outline: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.ux:hover, .ux *:hover {
+    background: rgba(0, 0, 0, 0.1);
+    outline: 1px solid rgba(0, 0, 0, 0.2);
+}
