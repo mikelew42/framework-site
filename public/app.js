@@ -1,10 +1,5 @@
-import App from "./framework/App.js";
-import "https://cdn.jsdelivr.net/gh/mikelew42/framework@main/ext/Lorem/Lorem.js";
+import Lew42 from "./framework/ext/Lew42/Lew42.js";
 
-const app = new App();
+export default new Lew42();
 
-// app.font("Montserrat");
-
-export default app;
-
-export * from "./framework/App.js";
+export * from "./framework/ext/Lew42/Lew42.js";
