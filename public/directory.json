@@ -1240,6 +1240,12 @@
 					]
 				},
 				{
+					"name": "framework-old.css",
+					"path": "framework",
+					"type": "file",
+					"full": "framework/framework-old.css"
+				},
+				{
 					"name": "framework.css",
 					"path": "framework",
 					"type": "file",

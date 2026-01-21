@@ -1,4 +1,4 @@
-@layer base, theme, util;
+@layer base, theme, util, ovr;
 
 @layer base {
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -21,7 +21,7 @@
 	    --bg: #42404B;
         
         --column: 20em;
-        --radius: 0.25em;;
+        --radius: 0.25em;
     }
     
     html { height: 100%;scrollbar-color: rgba(0, 0, 0, 0.2) transparent; }
@@ -48,8 +48,6 @@
 }
 
 @layer util {
-    :first-child { margin-top: 0; }
-    :last-child { margin-bottom: 0; }
 
     .pad { padding: 1em; }
     .mb-1 { margin-bottom: 1em; }
@@ -66,14 +64,19 @@
 
     textarea.auto { field-sizing: content;}
 
-    .ux, .ux * {
+    .viz, .viz * {
         background: rgba(0, 0, 0, 0.1);
         outline: 1px solid rgba(0, 0, 0, 0.2);
     }
 
-    .ux:hover, .ux *:hover {
+    .viz:hover, .viz *:hover {
         background: rgba(0, 0, 0, 0.2);
         outline: 1px solid rgba(0, 0, 0, 0.4);
     }
 
+}
+
+@layer ovr {
+    :first-child { margin-top: 0; }
+    :last-child { margin-bottom: 0; }
 }

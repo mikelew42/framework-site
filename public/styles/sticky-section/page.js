@@ -1,7 +1,7 @@
 import app, { el, div, h1, h2, h3, h4, p, is, section, style, ul, li } from "/app.js";
 import nav from "../nav.js";
 
-app.$app.ac("flex gap h-center wrap");
+app.$root.ac("flex gap h-center wrap");
 
 div.c("sidebar", nav());
 
