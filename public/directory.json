@@ -504,6 +504,12 @@
 									"full": "framework/ext/Draggable/Previewable.js"
 								},
 								{
+									"name": "Rewidth.js",
+									"path": "framework/ext/Draggable",
+									"type": "file",
+									"full": "framework/ext/Draggable/Rewidth.js"
+								},
+								{
 									"name": "Sortable.js",
 									"path": "framework/ext/Draggable",
 									"type": "file",
@@ -1394,30 +1400,36 @@
 			"full": "styles",
 			"children": [
 				{
-					"name": "1",
-					"path": "styles",
-					"type": "dir",
-					"full": "styles/1",
-					"children": [
-						{
-							"name": "page.js",
-							"path": "styles/1",
-							"type": "file",
-							"full": "styles/1/page.js"
-						}
-					]
-				},
-				{
 					"name": "layout",
 					"path": "styles",
 					"type": "dir",
 					"full": "styles/layout",
 					"children": [
 						{
-							"name": "nav.js",
+							"name": "flex",
+							"path": "styles/layout",
+							"type": "dir",
+							"full": "styles/layout/flex",
+							"children": [
+								{
+									"name": "page.js",
+									"path": "styles/layout/flex",
+									"type": "file",
+									"full": "styles/layout/flex/page.js"
+								}
+							]
+						},
+						{
+							"name": "flex.page.js",
 							"path": "styles/layout",
 							"type": "file",
-							"full": "styles/layout/nav.js"
+							"full": "styles/layout/flex.page.js"
+						},
+						{
+							"name": "grid.page.js",
+							"path": "styles/layout",
+							"type": "file",
+							"full": "styles/layout/grid.page.js"
 						},
 						{
 							"name": "page.js",
@@ -1426,12 +1438,6 @@
 							"full": "styles/layout/page.js"
 						}
 					]
-				},
-				{
-					"name": "nav.js",
-					"path": "styles",
-					"type": "file",
-					"full": "styles/nav.js"
 				},
 				{
 					"name": "page.js",
@@ -1452,6 +1458,12 @@
 							"full": "styles/sticky-section/page.js"
 						}
 					]
+				},
+				{
+					"name": "text.page.js",
+					"path": "styles",
+					"type": "file",
+					"full": "styles/text.page.js"
 				}
 			]
 		},
