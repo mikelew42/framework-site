@@ -196,6 +196,12 @@
 									"full": "framework/core/View/page.js"
 								},
 								{
+									"name": "ResizeObserver.js",
+									"path": "framework/core/View",
+									"type": "file",
+									"full": "framework/core/View/ResizeObserver.js"
+								},
+								{
 									"name": "View.js",
 									"path": "framework/core/View",
 									"type": "file",
@@ -210,6 +216,84 @@
 					"path": "framework",
 					"type": "file",
 					"full": "framework/directory.json"
+				},
+				{
+					"name": "dum",
+					"path": "framework",
+					"type": "dir",
+					"full": "framework/dum",
+					"children": [
+						{
+							"name": "dum.css",
+							"path": "framework/dum",
+							"type": "file",
+							"full": "framework/dum/dum.css"
+						},
+						{
+							"name": "dum.js",
+							"path": "framework/dum",
+							"type": "file",
+							"full": "framework/dum/dum.js"
+						},
+						{
+							"name": "image",
+							"path": "framework/dum",
+							"type": "dir",
+							"full": "framework/dum/image",
+							"children": [
+								{
+									"name": "image.js",
+									"path": "framework/dum/image",
+									"type": "file",
+									"full": "framework/dum/image/image.js"
+								},
+								{
+									"name": "page.js",
+									"path": "framework/dum/image",
+									"type": "file",
+									"full": "framework/dum/image/page.js"
+								}
+							]
+						},
+						{
+							"name": "list",
+							"path": "framework/dum",
+							"type": "dir",
+							"full": "framework/dum/list",
+							"children": [
+								{
+									"name": "animals.js",
+									"path": "framework/dum/list",
+									"type": "file",
+									"full": "framework/dum/list/animals.js"
+								},
+								{
+									"name": "page.js",
+									"path": "framework/dum/list",
+									"type": "file",
+									"full": "framework/dum/list/page.js"
+								},
+								{
+									"name": "users.js",
+									"path": "framework/dum/list",
+									"type": "file",
+									"full": "framework/dum/list/users.js"
+								}
+							]
+						},
+						{
+							"name": "page.js",
+							"path": "framework/dum",
+							"type": "file",
+							"full": "framework/dum/page.js"
+						},
+						{
+							"name": "readme.md",
+							"path": "framework/dum",
+							"type": "file",
+							"full": "framework/dum/readme.md"
+						}
+					]
 				},
 				{
 					"name": "ext",
@@ -1412,10 +1496,58 @@
 							"full": "styles/layout/flex",
 							"children": [
 								{
+									"name": "2.page.js",
+									"path": "styles/layout/flex",
+									"type": "file",
+									"full": "styles/layout/flex/2.page.js"
+								},
+								{
+									"name": "3.page.js",
+									"path": "styles/layout/flex",
+									"type": "file",
+									"full": "styles/layout/flex/3.page.js"
+								},
+								{
+									"name": "4.page.js",
+									"path": "styles/layout/flex",
+									"type": "file",
+									"full": "styles/layout/flex/4.page.js"
+								},
+								{
+									"name": "5.page.js",
+									"path": "styles/layout/flex",
+									"type": "file",
+									"full": "styles/layout/flex/5.page.js"
+								},
+								{
+									"name": "fullscreen.page.js",
+									"path": "styles/layout/flex",
+									"type": "file",
+									"full": "styles/layout/flex/fullscreen.page.js"
+								},
+								{
+									"name": "padding.page.js",
+									"path": "styles/layout/flex",
+									"type": "file",
+									"full": "styles/layout/flex/padding.page.js"
+								},
+								{
 									"name": "page.js",
 									"path": "styles/layout/flex",
 									"type": "file",
 									"full": "styles/layout/flex/page.js"
+								},
+								{
+									"name": "sidebar.page.js",
+									"path": "styles/layout/flex",
+									"type": "file",
+									"full": "styles/layout/flex/sidebar.page.js"
+								},
+								{
+									"name": "split.page.js",
+									"path": "styles/layout/flex",
+									"type": "file",
+									"full": "styles/layout/flex/split.page.js"
 								}
 							]
 						},
@@ -1436,6 +1568,20 @@
 							"path": "styles/layout",
 							"type": "file",
 							"full": "styles/layout/page.js"
+						}
+					]
+				},
+				{
+					"name": "page",
+					"path": "styles",
+					"type": "dir",
+					"full": "styles/page",
+					"children": [
+						{
+							"name": "page.js",
+							"path": "styles/page",
+							"type": "file",
+							"full": "styles/page/page.js"
 						}
 					]
 				},
@@ -1464,6 +1610,13 @@
 					"path": "styles",
 					"type": "file",
 					"full": "styles/text.page.js"
+				},
+				{
+					"name": "wire",
+					"path": "styles",
+					"type": "dir",
+					"full": "styles/wire",
+					"children": []
 				}
 			]
 		},

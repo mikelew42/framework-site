@@ -79,3 +79,8 @@ PROJECT STRUCTURE
 - /public/app.js: Application entry and configuration.
 - /public/page.js: Default home page.
 - /public/[path]/page.js: Sub-pages.
+
+DEV SERVER
+----------
+- Start: node server.js
+- Access: http://localhost/ (no port number)
