@@ -1,12 +1,20 @@
-import app, { div, h1, p, a, ul, li } from "/app.js";
+import app, { div, h1, p, a, ul, li, el, style } from "/app.js";
 
 app.$root.ac("page");
 
 h1("Text Elements");
 p("Basic HTML elements for structuring text content.");
-
+style(`
+    iframe {
+        width: 100%;
+        height: 500px;
+    }
+`);
 ul(() => {
-    li(() => a("Headings").href("/html/text/headings"));
+    li(() => { 
+        a("Headings").href("/html/text/headings");
+        el("iframe").attr("src", "/html/text/headings");
+    });
     li(() => a("Paragraphs").href("/html/text/paragraphs"));
     li(() => a("Blockquotes").href("/html/text/blockquotes"));
     li(() => a("Lists").href("/html/text/lists"));
