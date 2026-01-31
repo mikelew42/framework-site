@@ -1,9 +1,9 @@
 import app, { el, div, h1, h2, h3, h4, p, is, section, style, ul, li } from "/app.js";
 
-app.$root.ac("flex gap h-center wrap");
+app.$root.ac("page");
 
 
-div.c("page", () => {
+// div.c("page", () => {
 
     // Hero Section
     section(() => {
@@ -159,4 +159,4 @@ div.c("page", () => {
             el("span").text(" to show the styling.");
         });
     });
-});
+// });

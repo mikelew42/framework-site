@@ -224,6 +224,12 @@
 					"full": "framework/dum",
 					"children": [
 						{
+							"name": "contact.js",
+							"path": "framework/dum",
+							"type": "file",
+							"full": "framework/dum/contact.js"
+						},
+						{
 							"name": "dum.css",
 							"path": "framework/dum",
 							"type": "file",
@@ -1460,6 +1466,200 @@
 			]
 		},
 		{
+			"name": "html",
+			"path": "./",
+			"type": "dir",
+			"full": "html",
+			"children": [
+				{
+					"name": "input",
+					"path": "html",
+					"type": "dir",
+					"full": "html/input",
+					"children": [
+						{
+							"name": "action.page.js",
+							"path": "html/input",
+							"type": "file",
+							"full": "html/input/action.page.js"
+						},
+						{
+							"name": "checkbox.page.js",
+							"path": "html/input",
+							"type": "file",
+							"full": "html/input/checkbox.page.js"
+						},
+						{
+							"name": "html5.page.js",
+							"path": "html/input",
+							"type": "file",
+							"full": "html/input/html5.page.js"
+						},
+						{
+							"name": "input.page.js",
+							"path": "html/input",
+							"type": "file",
+							"full": "html/input/input.page.js"
+						},
+						{
+							"name": "page.js",
+							"path": "html/input",
+							"type": "file",
+							"full": "html/input/page.js"
+						},
+						{
+							"name": "radio.page.js",
+							"path": "html/input",
+							"type": "file",
+							"full": "html/input/radio.page.js"
+						},
+						{
+							"name": "select.page.js",
+							"path": "html/input",
+							"type": "file",
+							"full": "html/input/select.page.js"
+						},
+						{
+							"name": "textareas.page.js",
+							"path": "html/input",
+							"type": "file",
+							"full": "html/input/textareas.page.js"
+						}
+					]
+				},
+				{
+					"name": "media",
+					"path": "html",
+					"type": "dir",
+					"full": "html/media",
+					"children": [
+						{
+							"name": "audio.page.js",
+							"path": "html/media",
+							"type": "file",
+							"full": "html/media/audio.page.js"
+						},
+						{
+							"name": "canvas.page.js",
+							"path": "html/media",
+							"type": "file",
+							"full": "html/media/canvas.page.js"
+						},
+						{
+							"name": "iframe.page.js",
+							"path": "html/media",
+							"type": "file",
+							"full": "html/media/iframe.page.js"
+						},
+						{
+							"name": "images.page.js",
+							"path": "html/media",
+							"type": "file",
+							"full": "html/media/images.page.js"
+						},
+						{
+							"name": "meter.page.js",
+							"path": "html/media",
+							"type": "file",
+							"full": "html/media/meter.page.js"
+						},
+						{
+							"name": "page.js",
+							"path": "html/media",
+							"type": "file",
+							"full": "html/media/page.js"
+						},
+						{
+							"name": "progress.page.js",
+							"path": "html/media",
+							"type": "file",
+							"full": "html/media/progress.page.js"
+						},
+						{
+							"name": "svg.page.js",
+							"path": "html/media",
+							"type": "file",
+							"full": "html/media/svg.page.js"
+						},
+						{
+							"name": "video.page.js",
+							"path": "html/media",
+							"type": "file",
+							"full": "html/media/video.page.js"
+						}
+					]
+				},
+				{
+					"name": "page.js",
+					"path": "html",
+					"type": "file",
+					"full": "html/page.js"
+				},
+				{
+					"name": "text",
+					"path": "html",
+					"type": "dir",
+					"full": "html/text",
+					"children": [
+						{
+							"name": "blockquotes.page.js",
+							"path": "html/text",
+							"type": "file",
+							"full": "html/text/blockquotes.page.js"
+						},
+						{
+							"name": "code.page.js",
+							"path": "html/text",
+							"type": "file",
+							"full": "html/text/code.page.js"
+						},
+						{
+							"name": "headings.page.js",
+							"path": "html/text",
+							"type": "file",
+							"full": "html/text/headings.page.js"
+						},
+						{
+							"name": "hr.page.js",
+							"path": "html/text",
+							"type": "file",
+							"full": "html/text/hr.page.js"
+						},
+						{
+							"name": "inline.page.js",
+							"path": "html/text",
+							"type": "file",
+							"full": "html/text/inline.page.js"
+						},
+						{
+							"name": "lists.page.js",
+							"path": "html/text",
+							"type": "file",
+							"full": "html/text/lists.page.js"
+						},
+						{
+							"name": "page.js",
+							"path": "html/text",
+							"type": "file",
+							"full": "html/text/page.js"
+						},
+						{
+							"name": "paragraphs.page.js",
+							"path": "html/text",
+							"type": "file",
+							"full": "html/text/paragraphs.page.js"
+						},
+						{
+							"name": "tables.page.js",
+							"path": "html/text",
+							"type": "file",
+							"full": "html/text/tables.page.js"
+						}
+					]
+				}
+			]
+		},
+		{
 			"name": "html.html",
 			"path": "./",
 			"type": "file",
@@ -1572,16 +1772,16 @@
 					]
 				},
 				{
-					"name": "page",
+					"name": "page-test",
 					"path": "styles",
 					"type": "dir",
-					"full": "styles/page",
+					"full": "styles/page-test",
 					"children": [
 						{
 							"name": "page.js",
-							"path": "styles/page",
+							"path": "styles/page-test",
 							"type": "file",
-							"full": "styles/page/page.js"
+							"full": "styles/page-test/page.js"
 						}
 					]
 				},
@@ -1592,31 +1792,10 @@
 					"full": "styles/page.js"
 				},
 				{
-					"name": "sticky-section",
-					"path": "styles",
-					"type": "dir",
-					"full": "styles/sticky-section",
-					"children": [
-						{
-							"name": "page.js",
-							"path": "styles/sticky-section",
-							"type": "file",
-							"full": "styles/sticky-section/page.js"
-						}
-					]
-				},
-				{
 					"name": "text.page.js",
 					"path": "styles",
 					"type": "file",
 					"full": "styles/text.page.js"
-				},
-				{
-					"name": "wire",
-					"path": "styles",
-					"type": "dir",
-					"full": "styles/wire",
-					"children": []
 				}
 			]
 		},
