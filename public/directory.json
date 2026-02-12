@@ -1,6 +1,66 @@
 {
 	"files": [
 		{
+			"name": "ai",
+			"path": "./",
+			"type": "dir",
+			"full": "ai",
+			"children": [
+				{
+					"name": "icon-layouts",
+					"path": "ai",
+					"type": "dir",
+					"full": "ai/icon-layouts",
+					"children": [
+						{
+							"name": "page.js",
+							"path": "ai/icon-layouts",
+							"type": "file",
+							"full": "ai/icon-layouts/page.js"
+						},
+						{
+							"name": "styles.css",
+							"path": "ai/icon-layouts",
+							"type": "file",
+							"full": "ai/icon-layouts/styles.css"
+						}
+					]
+				},
+				{
+					"name": "navigation-explorer",
+					"path": "ai",
+					"type": "dir",
+					"full": "ai/navigation-explorer",
+					"children": [
+						{
+							"name": "page.js",
+							"path": "ai/navigation-explorer",
+							"type": "file",
+							"full": "ai/navigation-explorer/page.js"
+						},
+						{
+							"name": "styles.css",
+							"path": "ai/navigation-explorer",
+							"type": "file",
+							"full": "ai/navigation-explorer/styles.css"
+						}
+					]
+				},
+				{
+					"name": "page.js",
+					"path": "ai",
+					"type": "file",
+					"full": "ai/page.js"
+				},
+				{
+					"name": "styles.css",
+					"path": "ai",
+					"type": "file",
+					"full": "ai/styles.css"
+				}
+			]
+		},
+		{
 			"name": "app.js",
 			"path": "./",
 			"type": "file",
@@ -39,13 +99,6 @@
 			"path": "./",
 			"type": "file",
 			"full": "directory.json"
-		},
-		{
-			"name": "docs",
-			"path": "./",
-			"type": "dir",
-			"full": "docs",
-			"children": []
 		},
 		{
 			"name": "form.html",

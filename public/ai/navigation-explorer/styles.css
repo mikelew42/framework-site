@@ -1,0 +1,69 @@
+/* Navigation Explorer Styles */
+
+.navigation-explorer {
+    --tab-border: #ddd;
+    --tab-active: #007bff;
+}
+
+/* Demo Sections */
+.demo-section {
+    margin-bottom: 3rem;
+}
+
+/* Tab Navigation Styles */
+.tab-demo {
+    margin-top: 1rem;
+}
+
+.tab-buttons {
+    border-bottom: 2px solid var(--tab-border);
+    margin-bottom: 0;
+}
+
+.tab-buttons button {
+    background: none;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -2px;
+    transition: all 0.2s;
+    font-size: 1rem;
+}
+
+.tab-buttons button:hover {
+    background: rgba(0, 123, 255, 0.05);
+}
+
+.tab-buttons button.active {
+    border-bottom-color: var(--tab-active);
+    color: var(--tab-active);
+    font-weight: 600;
+}
+
+.tab-panels {
+    margin-top: 1rem;
+}
+
+.tab-panel {
+    display: none;
+}
+
+.tab-panel.active {
+    display: block;
+}
+
+/* Comparison Cards */
+.comparison .card {
+    background: #f8f9fa;
+}
+
+.comparison .card p {
+    margin: 0.5rem 0;
+    font-size: 0.95rem;
+}
+
+/* Utility Classes */
+.mt {
+    margin-top: 1rem;
+}
