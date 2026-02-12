@@ -2,7 +2,7 @@ import app, { el, h1, h3, ol, ul, li, article, header, footer, a, p, div } from 
 
 app.$root.ac("page");
 
-article(() => {
+export default article(() => {
     header(() => h1("Lists"));
     div(() => {
         h3("Definition List");

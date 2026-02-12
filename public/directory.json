@@ -19,6 +19,12 @@
 					"full": "assets/img",
 					"children": [
 						{
+							"name": "1000x500.png",
+							"path": "assets/img",
+							"type": "file",
+							"full": "assets/img/1000x500.png"
+						},
+						{
 							"name": "favicon.png",
 							"path": "assets/img",
 							"type": "file",
@@ -196,6 +202,12 @@
 							"full": "framework/core/View",
 							"children": [
 								{
+									"name": "file.js",
+									"path": "framework/core/View",
+									"type": "file",
+									"full": "framework/core/View/file.js"
+								},
+								{
 									"name": "page.js",
 									"path": "framework/core/View",
 									"type": "file",
@@ -214,6 +226,20 @@
 									"full": "framework/core/View/View.js"
 								}
 							]
+						}
+					]
+				},
+				{
+					"name": "css",
+					"path": "framework",
+					"type": "dir",
+					"full": "framework/css",
+					"children": [
+						{
+							"name": "page.js",
+							"path": "framework/css",
+							"type": "file",
+							"full": "framework/css/page.js"
 						}
 					]
 				},
@@ -620,100 +646,6 @@
 							]
 						},
 						{
-							"name": "Draggable2",
-							"path": "framework/ext",
-							"type": "dir",
-							"full": "framework/ext/Draggable2",
-							"children": [
-								{
-									"name": "Draggable.js",
-									"path": "framework/ext/Draggable2",
-									"type": "file",
-									"full": "framework/ext/Draggable2/Draggable.js"
-								},
-								{
-									"name": "Movable.js",
-									"path": "framework/ext/Draggable2",
-									"type": "file",
-									"full": "framework/ext/Draggable2/Movable.js"
-								},
-								{
-									"name": "page.js",
-									"path": "framework/ext/Draggable2",
-									"type": "file",
-									"full": "framework/ext/Draggable2/page.js"
-								},
-								{
-									"name": "Previewable.js",
-									"path": "framework/ext/Draggable2",
-									"type": "file",
-									"full": "framework/ext/Draggable2/Previewable.js"
-								},
-								{
-									"name": "Sortable.js",
-									"path": "framework/ext/Draggable2",
-									"type": "file",
-									"full": "framework/ext/Draggable2/Sortable.js"
-								},
-								{
-									"name": "styles.css",
-									"path": "framework/ext/Draggable2",
-									"type": "file",
-									"full": "framework/ext/Draggable2/styles.css"
-								}
-							]
-						},
-						{
-							"name": "Draggable3",
-							"path": "framework/ext",
-							"type": "dir",
-							"full": "framework/ext/Draggable3",
-							"children": [
-								{
-									"name": "Constraints.js",
-									"path": "framework/ext/Draggable3",
-									"type": "file",
-									"full": "framework/ext/Draggable3/Constraints.js"
-								},
-								{
-									"name": "Draggable.js",
-									"path": "framework/ext/Draggable3",
-									"type": "file",
-									"full": "framework/ext/Draggable3/Draggable.js"
-								},
-								{
-									"name": "Movable.js",
-									"path": "framework/ext/Draggable3",
-									"type": "file",
-									"full": "framework/ext/Draggable3/Movable.js"
-								},
-								{
-									"name": "page.js",
-									"path": "framework/ext/Draggable3",
-									"type": "file",
-									"full": "framework/ext/Draggable3/page.js"
-								},
-								{
-									"name": "Previewable.js",
-									"path": "framework/ext/Draggable3",
-									"type": "file",
-									"full": "framework/ext/Draggable3/Previewable.js"
-								},
-								{
-									"name": "Sortable.js",
-									"path": "framework/ext/Draggable3",
-									"type": "file",
-									"full": "framework/ext/Draggable3/Sortable.js"
-								},
-								{
-									"name": "styles.css",
-									"path": "framework/ext/Draggable3",
-									"type": "file",
-									"full": "framework/ext/Draggable3/styles.css"
-								}
-							]
-						},
-						{
 							"name": "File",
 							"path": "framework/ext",
 							"type": "dir",
@@ -846,6 +778,32 @@
 							]
 						},
 						{
+							"name": "Inspector",
+							"path": "framework/ext",
+							"type": "dir",
+							"full": "framework/ext/Inspector",
+							"children": [
+								{
+									"name": "Inspector.css",
+									"path": "framework/ext/Inspector",
+									"type": "file",
+									"full": "framework/ext/Inspector/Inspector.css"
+								},
+								{
+									"name": "Inspector.js",
+									"path": "framework/ext/Inspector",
+									"type": "file",
+									"full": "framework/ext/Inspector/Inspector.js"
+								},
+								{
+									"name": "page.js",
+									"path": "framework/ext/Inspector",
+									"type": "file",
+									"full": "framework/ext/Inspector/page.js"
+								}
+							]
+						},
+						{
 							"name": "Layout",
 							"path": "framework/ext",
 							"type": "dir",
@@ -900,6 +858,20 @@
 									"path": "framework/ext/Lew42",
 									"type": "file",
 									"full": "framework/ext/Lew42/mlogo.png"
+								},
+								{
+									"name": "styles",
+									"path": "framework/ext/Lew42",
+									"type": "dir",
+									"full": "framework/ext/Lew42/styles",
+									"children": [
+										{
+											"name": "page.js",
+											"path": "framework/ext/Lew42/styles",
+											"type": "file",
+											"full": "framework/ext/Lew42/styles/page.js"
+										}
+									]
 								}
 							]
 						},
@@ -1416,6 +1388,46 @@
 					"full": "framework/README.md"
 				},
 				{
+					"name": "ui",
+					"path": "framework",
+					"type": "dir",
+					"full": "framework/ui",
+					"children": [
+						{
+							"name": "icon",
+							"path": "framework/ui",
+							"type": "dir",
+							"full": "framework/ui/icon",
+							"children": [
+								{
+									"name": "icon.js",
+									"path": "framework/ui/icon",
+									"type": "file",
+									"full": "framework/ui/icon/icon.js"
+								},
+								{
+									"name": "icons.txt",
+									"path": "framework/ui/icon",
+									"type": "file",
+									"full": "framework/ui/icon/icons.txt"
+								},
+								{
+									"name": "page.js",
+									"path": "framework/ui/icon",
+									"type": "file",
+									"full": "framework/ui/icon/page.js"
+								}
+							]
+						},
+						{
+							"name": "ui.js",
+							"path": "framework/ui",
+							"type": "file",
+							"full": "framework/ui/ui.js"
+						}
+					]
+				},
+				{
 					"name": "ux",
 					"path": "framework",
 					"type": "dir",
@@ -1434,10 +1446,10 @@
 									"full": "framework/ux/Explorer/Explorer.js"
 								},
 								{
-									"name": "Explorer.page.js",
+									"name": "page.js",
 									"path": "framework/ux/Explorer",
 									"type": "file",
-									"full": "framework/ux/Explorer/Explorer.page.js"
+									"full": "framework/ux/Explorer/page.js"
 								}
 							]
 						},
@@ -1678,6 +1690,20 @@
 			"full": "index.html"
 		},
 		{
+			"name": "layout",
+			"path": "./",
+			"type": "dir",
+			"full": "layout",
+			"children": [
+				{
+					"name": "page.js",
+					"path": "layout",
+					"type": "file",
+					"full": "layout/page.js"
+				}
+			]
+		},
+		{
 			"name": "page.js",
 			"path": "./",
 			"type": "file",
@@ -1798,10 +1824,46 @@
 					"full": "styles/page.js"
 				},
 				{
+					"name": "sections",
+					"path": "styles",
+					"type": "dir",
+					"full": "styles/sections",
+					"children": [
+						{
+							"name": "page.js",
+							"path": "styles/sections",
+							"type": "file",
+							"full": "styles/sections/page.js"
+						}
+					]
+				},
+				{
 					"name": "text.page.js",
 					"path": "styles",
 					"type": "file",
 					"full": "styles/text.page.js"
+				}
+			]
+		},
+		{
+			"name": "test",
+			"path": "./",
+			"type": "dir",
+			"full": "test",
+			"children": [
+				{
+					"name": "editor",
+					"path": "test",
+					"type": "dir",
+					"full": "test/editor",
+					"children": [
+						{
+							"name": "page.js",
+							"path": "test/editor",
+							"type": "file",
+							"full": "test/editor/page.js"
+						}
+					]
 				}
 			]
 		},

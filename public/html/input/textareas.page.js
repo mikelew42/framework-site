@@ -10,5 +10,4 @@ article(() => {
             textarea().attr("id", "textarea").attr("placeholder", "Enter your message here");
         });
     });
-    footer(() => p(() => a("[Back]").href("/html/input")));
 });

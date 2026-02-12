@@ -16,5 +16,4 @@ article(() => {
             }).attr("id", "select");
         });
     });
-    footer(() => p(() => a("[Back]").href("/html/input")));
 });

@@ -21,19 +21,11 @@ rewidth.c("mb", () => {
     }).style("--column", "10em");
 });
 
-rewidth.c("mb", () => {
+rewidth.c("mb", re => {
     let cont;
     h3(".flex.three");
-    el("label", 
-        el("input")
-            .attr("type", "checkbox").style("margin-right", "0.5em").style("cursor", "pointer"), 
-        "viz"
-    ).style("cursor", "pointer").click(e => {
-        if (e.target.tagName !== 'INPUT') return;
-        cont.tc("viz");
-    });
     // div.c("dark", () => {
-        cont = div.c("flex three dark all-pad viz", () => {
+        cont = div.c("flex three dark all-pad viz", d => {
             style(`.card { }
                 .card > * { margin: 0; }`);
             div.c("card", () => {
@@ -52,20 +44,23 @@ rewidth.c("mb", () => {
             //     h4("Card");
             //     p("This is a card.");
             // });
-        }).style("--column", "14em");
+        }).style("--column", "14em").ctrl("flex three dark all-pad viz");
     // })
     
 
     p("This is called the Albatross method?  It uses a clever calculation to go from 3 columns directly to 1 column.  This would work for 4 columns, but that jump is less practical.");
 });
 
-rewidth.c("mb", () => {
+rewidth.c("mb", re => {
     h3(".flex");
-    div.c("flex gap dark pad wrap v-center", () => {
+    div.c("flex gap dark pad wrap v-center zoom-responsive", () => {
         h4("This is the left side.").ac("mb-0");
-        button.c("prim","Right").style("margin-left", "auto");
-    }).style("min-height", "10em");
-    p("The button has `margin-left: auto`.")
+        re.button = button.c("prim","Right").ac("ml-auto");
+    }).style("min-height", "10em").ctrl("flex gap dark pad wrap v-center zoom-responsive viz");
+    p("The button has `margin-left: auto`.", () => {
+        re.button.ctrl("ml-auto")
+        // if ctrl() is chainable, then the button gets appended unless we're careful...
+    });
 });
 
 rewidth.c("mb", () => {

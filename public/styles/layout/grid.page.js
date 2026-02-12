@@ -8,6 +8,26 @@ style(`
 h1("Grid");
 
 rewidth.c("mb", () => {
+    h3(".grid.three");
+
+    div.c("col-viz pad mb", () => {
+        const c = code().style("width", "var(--column)").style("display", "block").style("text-align", "center");
+
+        c.update = () => {
+            c.text(c.compute().width);
+        };
+
+        c.resize(() => c.update());
+        
+        app.ready.then(() => c.update());
+    });
+    div.c("grid three viz dark all-pad gap pad", () => {
+        div("one");
+        div("two");
+        div("three");
+    });
+});
+rewidth.c("mb", () => {
     h3(".grid.auto");
 
     div.c("col-viz pad mb", () => {

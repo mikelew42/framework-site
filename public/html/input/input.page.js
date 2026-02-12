@@ -1,4 +1,4 @@
-import app, { legend, fieldset, p, label, input, button, img, article, footer, a, div } from "/app.js";
+import app, { legend, fieldset, p, label, input, button, img, article, footer, a, div, append    } from "/app.js";
 
 app.$root.ac("page");
 
