@@ -33,4 +33,12 @@ export class GridItem extends View {
     }
 }
 
-GridItem.prototype.tag = "a";
+export class GridNavItem extends View {
+    render() {
+        this.ac("grid-item grid-nav-item").href(this.path || "#");
+        icon(this.name || "extension").ac("lg");
+        div.c("label", this.label || "Grid Nav Item");
+    }
+}
+
+GridNavItem.prototype.tag = "a";

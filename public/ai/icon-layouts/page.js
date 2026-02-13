@@ -1,5 +1,5 @@
 import app, { div, h1, h2, section, icon, View, button } from "/app.js";
-import { IconItem, IconTab, GridItem } from "./components.js";
+import { IconItem, IconTab, GridItem, GridNavItem } from "./components.js";
 
 app.$root.ac("page icon-layouts-demo");
 
@@ -75,5 +75,16 @@ section.c("grid-demo", () => {
         new GridItem({ name: "language", label: "Global Reach" });
         new GridItem({ name: "auto_awesome", label: "AI Powered" });
         new GridItem({ name: "sync", label: "Realtime Sync" });
+    });
+});
+section.c("grid-nav-demo", () => {
+    h2("Icon Grid (Navigation)");
+    div.c("icon-grid", () => {
+        new GridNavItem({ name: "bolt", label: "Fast Performance", path: "#" });
+        new GridNavItem({ name: "security", label: "Secure Data", path: "#" });
+        new GridNavItem({ name: "palette", label: "Custom Themes", path: "#" });
+        new GridNavItem({ name: "language", label: "Global Reach", path: "#" });
+        new GridNavItem({ name: "auto_awesome", label: "AI Powered", path: "#" });
+        new GridNavItem({ name: "sync", label: "Realtime Sync", path: "#" });
     });
 });

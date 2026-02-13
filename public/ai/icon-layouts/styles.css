@@ -111,6 +111,8 @@
     text-align: center;
 }
 
+.grid-nav-item { text-decoration: none; }
+
 /* Controls */
 .size-controls {
     display: flex;

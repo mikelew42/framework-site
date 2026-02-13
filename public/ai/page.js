@@ -1,4 +1,5 @@
 import app, { View, el, div, h1, h2, h3, h4, p, section, ul, li, code } from "/app.js";
+import { GridNavItem } from "./icon-layouts/components.js";
 
 View.stylesheet("/ai/styles.css");
 
@@ -8,6 +9,16 @@ app.$root.ac("page ai-template");
 section.c("hero", () => {
     h1("AI Content Template");
     p.c("lead", "This is a sample template page that AI can use to create future posts, articles, and content. It demonstrates various content structures, layouts, and components available in the framework.");
+});
+
+// Projects Navigation
+section.c("projects", () => {
+    h2("AI Projects");
+    div.c("icon-grid", () => {
+        new GridNavItem({ name: "layers", label: "Icon Layouts", path: "/ai/icon-layouts/" });
+        new GridNavItem({ name: "explore", label: "Navigation Explorer", path: "/ai/navigation-explorer/" });
+        new GridNavItem({ name: "image", label: "Image Exploration", path: "/ai/image-exploration/" });
+    });
 });
 
 // Article/Blog Post Section
