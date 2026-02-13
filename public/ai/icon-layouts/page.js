@@ -1,43 +1,7 @@
 import app, { div, h1, h2, section, icon, View, button } from "/app.js";
-
-app.stylesheet(import.meta, "styles.css");
+import { IconItem, IconTab, GridItem } from "./components.js";
 
 app.$root.ac("page icon-layouts-demo");
-
-// Components
-
-class IconItem extends View {
-    render() {
-        this.ac("icon-item");
-        this.icon = icon(this.name || "star").ac(this.size || "md");
-        div.c("label", this.label || "Icon Item");
-    }
-}
-
-class IconTab extends View {
-    render() {
-        this.ac("icon-tab");
-        if (this.active) this.ac("active");
-        
-        icon(this.name || "home").ac("md");
-        div.c("label", this.label || "Home");
-        
-        this.click(() => {
-            // Use parent.el.children and View.lookup if needed, 
-            // but here we can just iterate over siblings via the element for simple class toggle
-            Array.from(this.el.parentNode.children).forEach(el => el.classList.remove("active"));
-            this.ac("active");
-        });
-    }
-}
-
-class GridItem extends View {
-    render() {
-        this.ac("grid-item");
-        icon(this.name || "extension").ac("lg");
-        div.c("label", this.label || "Component");
-    }
-}
 
 // Demo Page
 
