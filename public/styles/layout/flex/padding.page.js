@@ -2,7 +2,7 @@ import app, { el, div, h1, h2, h3, h4, p, is, section, style, ul, li, code, rewi
 
 import "/framework/core/View/ResizeObserver.js";
 
-app.$root.ac("page");
+// app.$root.ac("page");
 
 style(`
     .small { zoom: 0.5}

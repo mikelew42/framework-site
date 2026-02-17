@@ -10,7 +10,7 @@ SocketServer.on("new", () => {
 	console.log("New socket server");
 });
 SocketServer.use(LiveReload);
-SocketServer.use(Runtime);
+SocketServer.Socket.use(Runtime);
 
 Server.use(SocketServer);
 Server.use(Directory);

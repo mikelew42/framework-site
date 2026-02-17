@@ -1,6 +1,6 @@
 import app, { el, div, h1, h2, h3, h4, p, is, section, style, ul, li, code, rewidth, button } from "/app.js";
 
-app.$root.ac("page");
+// app.$root.ac("page");
 
 style(`
     .fullscreen-demo { 

@@ -1,6 +1,6 @@
 import app, { el, div, h1, h2, h3, h4, p, is, section, style, ul, li } from "/app.js";
 
-app.$root.ac("page");
+// app.$root.ac("page");
 
 
 // div.c("page", () => {

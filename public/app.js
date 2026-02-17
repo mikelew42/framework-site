@@ -7,6 +7,6 @@ const app = new Lew42();
 app.dum = dum;
 
 export default app;
-
+export { app };
 export * from "./framework/ext/Lew42/Lew42.js";
 export { dum };
