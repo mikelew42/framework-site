@@ -75,7 +75,8 @@ class Counter extends View {
 
 PROJECT STRUCTURE
 -----------------
-- /public/framework/: Core library files.
+- /Server/: Pluggable Server.  This is a git submodule.
+- /public/framework/: Core library files.  This is a git submodule.
 - /public/app.js: Application entry and configuration.
 - /public/page.js: Default home page.
 - /public/[path]/page.js: Sub-pages.

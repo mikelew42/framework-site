@@ -7,6 +7,62 @@
 			"full": "ai",
 			"children": [
 				{
+					"name": "deep-research",
+					"path": "ai",
+					"type": "dir",
+					"full": "ai/deep-research",
+					"children": [
+						{
+							"name": "google",
+							"path": "ai/deep-research",
+							"type": "dir",
+							"full": "ai/deep-research/google",
+							"children": [
+								{
+									"name": "page.js",
+									"path": "ai/deep-research/google",
+									"type": "file",
+									"full": "ai/deep-research/google/page.js"
+								}
+							]
+						},
+						{
+							"name": "openai",
+							"path": "ai/deep-research",
+							"type": "dir",
+							"full": "ai/deep-research/openai",
+							"children": [
+								{
+									"name": "page.js",
+									"path": "ai/deep-research/openai",
+									"type": "file",
+									"full": "ai/deep-research/openai/page.js"
+								}
+							]
+						},
+						{
+							"name": "page.js",
+							"path": "ai/deep-research",
+							"type": "file",
+							"full": "ai/deep-research/page.js"
+						},
+						{
+							"name": "perplexity",
+							"path": "ai/deep-research",
+							"type": "dir",
+							"full": "ai/deep-research/perplexity",
+							"children": [
+								{
+									"name": "page.js",
+									"path": "ai/deep-research/perplexity",
+									"type": "file",
+									"full": "ai/deep-research/perplexity/page.js"
+								}
+							]
+						}
+					]
+				},
+				{
 					"name": "icon-layouts",
 					"path": "ai",
 					"type": "dir",
@@ -945,6 +1001,12 @@
 											"full": "framework/ext/Draggable/test/page.js"
 										}
 									]
+								},
+								{
+									"name": "todo.md",
+									"path": "framework/ext/Draggable",
+									"type": "file",
+									"full": "framework/ext/Draggable/todo.md"
 								}
 							]
 						},
@@ -1271,6 +1333,12 @@
 													"path": "framework/ext/List/Component/Sortable",
 													"type": "file",
 													"full": "framework/ext/List/Component/Sortable/page.js"
+												},
+												{
+													"name": "test.json",
+													"path": "framework/ext/List/Component/Sortable",
+													"type": "file",
+													"full": "framework/ext/List/Component/Sortable/test.json"
 												}
 											]
 										},
