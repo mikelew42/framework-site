@@ -1,5 +1,9 @@
 {
   "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "postinstall": "git submodule update --init --recursive"
+  },
   "dependencies": {
     "chokidar": "^5.0.0",
     "express": "^5.2.1",
