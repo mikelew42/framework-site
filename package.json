@@ -2,11 +2,16 @@
   "type": "module",
   "scripts": {
     "start": "node index.js",
-    "postinstall": "git submodule update --init --recursive"
+    "postinstall": "git submodule update --init --recursive",
+    "deploy": "wrangler deploy",
+    "preview": "wrangler dev"
   },
   "dependencies": {
     "chokidar": "^5.0.0",
     "express": "^5.2.1",
     "ws": "^8.19.0"
+  },
+  "devDependencies": {
+    "wrangler": "^4.103.0"
   }
 }
