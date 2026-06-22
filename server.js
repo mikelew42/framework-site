@@ -1,7 +1,5 @@
 import Server from "./Server/Server.js";
-import SocketServer from "./Server/plugins/SocketServer/SocketServer.js";
-import LiveReload from "./Server/plugins/SocketServer/LiveReload.js";
+import DevSocket from "./Server/plugins/DevSocket/DevSocket.js";
 
-SocketServer.use(LiveReload);
-Server.use(SocketServer);
+Server.use(DevSocket);
 new Server();
